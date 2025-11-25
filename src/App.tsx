@@ -6,7 +6,6 @@ import Main from "./pages/Main Page/Main"
 import Products from "./pages/Products/Products"
 import Product from "./pages/Product/Product"
 import Cart from "./pages/Cart/Cart"
-import Test from "./Test"
 import Checkout from "./pages/Checkout/Checkout"
 import About from "./pages/About/About"
 
