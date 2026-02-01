@@ -13,7 +13,7 @@ export function useProduct() {
     const product: ProductType | undefined = products.find((p) => p.name === productName);
     const thumbnails = [product?.image, thumbnail1, thumbnail2, thumbnail3]
     const related = products
-        .filter((p) => p.name !== productName && p.type === "plant")
+        .filter((p) => p.name !== productName && p.type === product?.type)
         .slice(0, 6);
     const fixedVasePrice = 20;
 

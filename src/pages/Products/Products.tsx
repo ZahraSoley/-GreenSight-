@@ -150,7 +150,7 @@ const Products = () => {
                                                                         checked={plntSize.includes(size)}
                                                                         onChange={e =>
                                                                             plntSize.includes(e.target.value)
-                                                                                ? setplntSize(prev => prev.filter(s => s != size))
+                                                                                ? setplntSize(prev => prev.filter(s => s != size)) // pop is wrong because it only removes the last last item
                                                                                 : setplntSize(prev => [...prev, e.target.value])}
                                                                     />
                                                                     {size}
@@ -282,3 +282,4 @@ export default Products
 // why input clears when i change selected even though i didint mount its value to state ?
 // its because of how shadcn works and the best practice it to still mount the input to min and max 
 // so if i made the drawer my self by translate x it would never unmount aand i would see the number i wrote inside input even if i change the selected
+// there is a problem each check box take all the row and becaus eits wraped in label when we click on empty space i might check or uncheck unintentionally 
