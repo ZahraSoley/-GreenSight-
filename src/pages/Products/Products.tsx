@@ -129,7 +129,7 @@ const Products = () => {
                                                             className="w-24 rounded-md border border-muted bg-secondary/30 px-2 py-1 text-sm text-primary" />
                                                         <input type="number"
                                                             placeholder="max"
-                                                            onChange={e => Number(e.target.value) <= minprice ? setMaxprice(100) : setMaxprice(Number(e.target.value))}
+                                                            onChange={e => Number(e.target.value) <= minprice ? setMaxprice(minprice+1) : setMaxprice(Number(e.target.value))}
                                                             className="w-24 rounded-md border border-muted bg-secondary/30 px-2 py-1 text-sm text-primary" />
                                                     </div>
                                                 </AccordionContent>
@@ -279,3 +279,6 @@ export default Products
 // improve hero section on smaller screens
 // fix sort ui
 // add currency selector
+// why input clears when i change selected even though i didint mount its value to state ?
+// its because of how shadcn works and the best practice it to still mount the input to min and max 
+// so if i made the drawer my self by translate x it would never unmount aand i would see the number i wrote inside input even if i change the selected
