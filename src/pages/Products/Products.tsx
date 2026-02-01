@@ -42,6 +42,7 @@ const Products = () => {
             setMaxprice(1000),
             setplntSize(['Small', 'Medium', 'Large']),
             setDifficulty(['Very easy', 'Easy', 'Moderate'])
+            setSort('Featured')
     }
 
     return (
@@ -277,4 +278,4 @@ export default Products
 // fix layout shift in the last grid item
 // improve hero section on smaller screens
 // fix sort ui
-//  add currency selector
+// add currency selector

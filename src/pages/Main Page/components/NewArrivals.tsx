@@ -1,3 +1,5 @@
+// i can use filter for new arrivals => increase readability
+
 import { Button } from "@/components/ui/button"
 import { products } from '@/assets/Products'
 import {
