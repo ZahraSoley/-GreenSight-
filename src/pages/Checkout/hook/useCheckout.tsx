@@ -3,7 +3,7 @@ import { CartContext } from "@/context/CartContext";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { CartItemType } from "@/types/types";
+// import type { CartItemType } from "@/types/types";
 
 const schema = z.object({
     fullName: z.string().min(3, "Full name must be at least 3 characters"),
