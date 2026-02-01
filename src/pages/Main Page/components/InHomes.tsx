@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, act } from "react"
 import home1 from '@/assets/main page/home1.jpg'
 import home2 from '@/assets/main page/home2.jpg'
 import home3 from '@/assets/main page/home3.jpg'
@@ -31,11 +31,11 @@ const testimonials = [
 
 export default function InHomes() {
 
-  const [pic, setpic] = useState<number>(1)
+  const [active, setActive] = useState<number>(1)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setpic(prev => prev === 3 ? 1 : prev + 1)
+      setActive(prev => prev === 3 ? 1 : prev + 1)
     }, 7000)
     return () => clearInterval(timer)
   }, [])
@@ -58,7 +58,7 @@ export default function InHomes() {
         <div className='flex-1 relative '>
           <div className="relative w-full md:w-3/4 aspect-[4/5] xl:aspect-square m-auto ">
             {testimonials.map(testimonial =>
-              <div className={cn("absolute inset-0 w-full h-full rounded-sm overflow-clip transition ease-in-out duration-750", pic === testimonial.id ? 'opacity-100' : 'opacity-0')}>
+              <div className={cn("absolute inset-0 w-full h-full rounded-sm overflow-clip transition ease-in-out duration-750", active === testimonial.id ? 'opacity-100' : 'opacity-0')}>
                 <img src={testimonial.image}
                   alt="two plants"
                   className={cn('object-cover absolute inset-0 xl:top-[-10rem]')} />
@@ -75,8 +75,8 @@ export default function InHomes() {
                 <div className="flex justify-center items-center gap-5 absolute bottom-5 w-full z-10">
                   {testimonials.map(testimonial =>
                     <button
-                      onClick={() => setpic(testimonial.id)}
-                      className={cn("w-2 h-2 rounded-full bg-zinc-500 cursor-pointer transition ease-in-out", pic === testimonial.id && 'bg-zinc-200')}></button>
+                      onClick={() => setActive(testimonial.id)}
+                      className={cn("w-2 h-2 rounded-full bg-zinc-500 cursor-pointer transition ease-in-out", active === testimonial.id && 'bg-zinc-200')}></button>
                   )}
                 </div>
               </div>
