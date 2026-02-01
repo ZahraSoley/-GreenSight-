@@ -4,17 +4,22 @@ import journal3 from '@/assets/main page/journal3.jpg'
 import { useState } from 'react'
 
 const Journal = () => {
-    const [email, setEmail] = useState(null)
-    const handlesubmit = async (data: string | null) => {
+
+    const [email, setEmail] = useState<any>(null)
+    const handlesubmit = async (e: any) => {
+        e.preventDefault()
         try {
             const reponse = await fetch('#', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
+                body: JSON.stringify(email)
             })
-            if (!reponse.ok && !data) {
+
+            if (!reponse.ok && email === null) {
                 throw new Error('Oops! some thing went wrong!')
             }
+            alert('Thank you for joining our weekly newsletter!')
+
         } catch (error) {
             alert(error)
         }
@@ -75,15 +80,16 @@ const Journal = () => {
                         Join our seasonal journal for new stories, arrivals, and calm-living notes.
                     </p>
 
-                    <form className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <form onSubmit={handlesubmit}
+                        className="flex flex-col sm:flex-row gap-4 justify-center">
                         <input
+                            onChange={(e) => setEmail(e.target.value)}
                             type="email"
                             placeholder="Your email address"
                             className="w-full px-4 py-3 rounded-full border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                         <button
                             type='submit'
-                            onClick={() => handlesubmit(email)}
                             className="bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition">
                             Subscribe
                         </button>
