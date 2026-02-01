@@ -72,15 +72,15 @@ export default function InHomes() {
                     Shop this piece
                   </a>
                 </div>
-                <div className="flex justify-center items-center gap-5 absolute bottom-5 w-full z-10">
-                  {testimonials.map(testimonial =>
-                    <button
-                      onClick={() => setActive(testimonial.id)}
-                      className={cn("w-2 h-2 rounded-full bg-zinc-500 cursor-pointer transition ease-in-out", active === testimonial.id && 'bg-zinc-200')}></button>
-                  )}
-                </div>
               </div>
             )}
+            <div className="flex justify-center items-center gap-5 absolute bottom-5 w-full z-10">
+              {testimonials.map(testimonial =>
+                <button
+                  onClick={() => setActive(testimonial.id)}
+                  className={cn("w-2 h-2 rounded-full bg-zinc-500 cursor-pointer transition ease-in-out", active === testimonial.id && 'bg-zinc-200')}></button>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,25 @@
 import journal1 from '@/assets/main page/journal1.jpg'
 import journal2 from '@/assets/main page/journal2.jpg'
 import journal3 from '@/assets/main page/journal3.jpg'
+import { useState } from 'react'
 
 const Journal = () => {
+    const [email, setEmail] = useState(null)
+    const handlesubmit = async (data: string | null) => {
+        try {
+            const reponse = await fetch('#', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            if (!reponse.ok && !data) {
+                throw new Error('Oops! some thing went wrong!')
+            }
+        } catch (error) {
+            alert(error)
+        }
+    }
+
     return (
         <section className="lg:mx-8 md:mx-5 mx-3 border-t-2">
             <div className="py-12 px-6 md:px-8 max-w-6xl mx-auto text-center">
@@ -64,7 +81,10 @@ const Journal = () => {
                             placeholder="Your email address"
                             className="w-full px-4 py-3 rounded-full border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                         />
-                        <button className="bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition">
+                        <button
+                            type='submit'
+                            onClick={() => handlesubmit(email)}
+                            className="bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition">
                             Subscribe
                         </button>
                     </form>
