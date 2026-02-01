@@ -19,7 +19,7 @@ const Journal = () => {
                 throw new Error('Oops! some thing went wrong!')
             }
             alert('Thank you for joining our weekly newsletter!')
-
+            setEmail('')
         } catch (error) {
             alert(error)
         }
@@ -83,6 +83,7 @@ const Journal = () => {
                     <form onSubmit={handlesubmit}
                         className="flex flex-col sm:flex-row gap-4 justify-center">
                         <input
+                            value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             type="email"
                             placeholder="Your email address"
