@@ -18,7 +18,7 @@ export function useProduct() {
     const fixedVasePrice = 20;
 
     // UI state
-    const [selectedImage, setSelectedImage] = useState<string | undefined>("");
+    const [selectedImage, setSelectedImage] = useState<string | undefined>(product?.image);
     const [selectedRadio, setSelectedRadio] = useState<"without" | "with">("without");
     const [quantity, setQuantity] = useState<number>(0);
     const [activeTab, setActiveTab] = useState<"care" | "description" | "shipping">("care");
