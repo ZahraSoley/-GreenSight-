@@ -36,7 +36,7 @@ const ProductRight = () => {
             </div>
 
             {/* Vase Option */}
-            <div className="flex justify-between border-t border-muted pt-4">
+            {/* <div className="flex justify-between border-t border-muted pt-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                     <input
                         type="radio"
@@ -59,7 +59,7 @@ const ProductRight = () => {
                     />
                     <span>With vase (${(product.price + fixedVasePrice).toFixed(2)})</span>
                 </label>
-            </div>
+            </div> */}
 
             {/* Quantity Selector + Add to Cart */}
             <div className="flex flex-col gap-4 border-t border-muted pt-4">
