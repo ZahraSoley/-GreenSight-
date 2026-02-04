@@ -15,7 +15,7 @@ const Journal = () => {
                 body: JSON.stringify(email)
             })
 
-            if (!reponse.ok && email === null) {
+            if (!reponse.ok && !email) {
                 throw new Error('Oops! some thing went wrong!')
             }
             alert('Thank you for joining our weekly newsletter!')
