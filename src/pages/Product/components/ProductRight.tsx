@@ -36,7 +36,7 @@ const ProductRight = () => {
             </div>
 
             {/* Vase Option */}
-            <div className="flex justify-between border-t border-muted pt-4">
+            <div className="flex justify-between border-t border-muted pt-4 hidden">
                 <label className="flex items-center gap-2 cursor-pointer">
                     <input
                         type="radio"
