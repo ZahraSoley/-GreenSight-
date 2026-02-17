@@ -159,7 +159,7 @@ export default function Header() {
                                                     <Link to="">all products</Link>
                                                 }
                                                 {link.items.map(item =>
-                                                    <Link to="/">{item}</Link>
+                                                    <Link to={`/${link.lable}`}>{item}</Link>
                                                 )}
                                             </AccordionContent>
                                         </AccordionItem>
