@@ -143,7 +143,7 @@ const Products = () => {
                                                         <div className="mt-3 flex flex-col gap-4">
                                                             {['Small', 'Medium', 'Large'].map(size =>
                                                                 <label className="flex gap-2 text-sm">
-                                                                    <input
+                                                                    <input // or here i can remove the value and use size instead of e.target value because the call back function in onchange is closure
                                                                         className="accent-secondary text-primary"
                                                                         type="checkbox"
                                                                         value={size}
