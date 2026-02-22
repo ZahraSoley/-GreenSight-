@@ -10,13 +10,23 @@ const ProductLeft = () => {
             {/* Thumbnails */}
             <div className="flex md:flex-col gap-3 w-20">
                 {thumbnails.map((img) => (
-                    <img
-                        key={img}
-                        src={img}
-                        alt="thumbnail"
-                        onClick={() => setSelectedImage(img)}
-                        className={`w-12 md:w-20 object-cover rounded-md cursor-pointer transition-all duration-300 ${selectedImage === img ? "opacity-100 ring-1 ring-accent" : "opacity-80 hover:opacity-100"}`}
-                    />
+<button
+  key={img}
+  type="button"
+  onClick={() => setSelectedImage(img)}
+  className={`rounded-md transition-all duration-300 
+    ${selectedImage === img 
+      ? "ring-1 ring-accent" 
+      : "hover:opacity-100"}`
+  }
+>
+  <img
+    src={img}
+    alt="Product thumbnail"
+    className={`w-12 md:w-20 object-cover rounded-md 
+      ${selectedImage === img ? "opacity-100" : "opacity-80"}`}
+  />
+</button>
                 ))}
             </div>
 
