@@ -7,8 +7,8 @@ A clean e-commerce experience for browsing plants, managing a cart, and completi
 
 ## **Demo**
 
-Live:
-Screens:
+https://green-sight-ten.vercel.app/
+
 
 ---
 
@@ -25,7 +25,7 @@ Features
 📦 Order summary with live totals + shipping
 🌤️ Quiet-luxury design language (soft, airy, minimal)
 💅 Clean React + TypeScript + Tailwind + ShadCN
-🧱 Feature-based architecture (2025 standard)
+🧱 Feature-based architecture 
 
 
 ---
