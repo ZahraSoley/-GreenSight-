@@ -3,12 +3,13 @@ import flower from '@/assets/main page/flower.png'
 import planter from '@/assets/main page/planter.png'
 import gift from '@/assets/main page/gift.png'
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const collections = [
-    { href: '', name: 'plants', pic: plant },
-    { href: '', name: 'flowers', pic: flower },
-    { href: '', name: 'planters', pic: planter },
-    { href: '', name: 'gifts', pic: gift },
+    { name: 'plants', pic: plant },
+    { name: 'flowers', pic: flower },
+    { name: 'planters', pic: planter },
+    { name: 'gifts', pic: gift },
 ]
 
 export const Collections = () => {
@@ -21,11 +22,11 @@ export const Collections = () => {
                 </div>
                 <div className="grid grid-cols-2 md:flex md:grid-cols-4 gap-5 mt-5">
                     {collections.map(collection =>
-                        <a href="" className="group relative w-full aspect-square bg-secondary hover:bg-muted transition flex flex-col justify-center items-center rounded-xs">
+                        <Link to='/products' className="group relative w-full aspect-square bg-secondary hover:bg-muted transition flex flex-col justify-center items-center rounded-xs">
                             <ArrowRight className='absolute opacity-0 -translate-x-1 top-1 right-4 w-4 group-hover:opacity-100 group-hover:translate-x-1 transition ease-in-out duration-200'/>
                             <img src={collection.pic} alt={collection.name} className='w-4/5 aspect-square' />
                             <span className='font-semibold mb-3'>{collection.name}</span>
-                        </a>
+                        </Link>
                     )}
                 </div>
 
