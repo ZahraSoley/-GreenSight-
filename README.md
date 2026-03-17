@@ -15,7 +15,7 @@ Screens:
 # **Features**
 
 Features
-🪴 Product catalog with clean card layout
+🪴 Product catalog with clean card layout and filtering
 🔍 Product detail with selectable options to select from
 🛒 Cart system with localStorage persistence
 🔁 Auto-restore cart state on reload
@@ -148,16 +148,6 @@ The entire checkout logic is handled inside a **single custom hook**:
 
 ---
 
-# **Design Notes**
-
-* Quiet, airy visual style (sunlight minimalism)
-* Neutral palette, soft edges, natural spacing
-* Tailwind with 2025 conventions (`gap-*`, minimal overrides)
-* No layout shifting
-* Pure, intentional UI hierarchy
-
----
-
 # **Getting Started**
 
 ```
@@ -187,7 +177,7 @@ Green Sight shows how I build real-world frontends:
 * A polished interface that feels like a real product
 
 This repo represents my coding style:
-**simple, calm, structured, and production-conscious.**
+**simple, structured, and production-conscious.**
 
 ---
 
