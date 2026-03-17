@@ -156,10 +156,10 @@ export default function Header() {
                                             <AccordionTrigger>{link.lable}</AccordionTrigger>
                                             <AccordionContent className="flex flex-col gap-3">
                                                 {link.lable === 'Products' &&
-                                                    <Link to="">all products</Link>
+                                                    <Link to="/products">all products</Link>
                                                 }
                                                 {link.items.map(item =>
-                                                    <Link to="/">{item}</Link>
+                                                    <Link to={`/${link.lable}`}>{item}</Link>
                                                 )}
                                             </AccordionContent>
                                         </AccordionItem>

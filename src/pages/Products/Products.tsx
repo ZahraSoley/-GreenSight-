@@ -143,7 +143,7 @@ const Products = () => {
                                                         <div className="mt-3 flex flex-col gap-4">
                                                             {['Small', 'Medium', 'Large'].map(size =>
                                                                 <label className="flex gap-2 text-sm">
-                                                                    <input
+                                                                    <input // or here i can remove the value and use size instead of e.target value because the call back function in onchange is closure
                                                                         className="accent-secondary text-primary"
                                                                         type="checkbox"
                                                                         value={size}
@@ -232,31 +232,43 @@ const Products = () => {
                                 </div>
                             </div>
                         ) : (
-                            <div className={clsx("grid place-items-baseline gap-2.5 px-2.5", col === 'three' ? 'grid-cols-3' : 'grid-cols-2')}>
-                                {
-                                    sorted.map(p =>
-                                        <Link
-                                            to={`/products/${p.name}`}
-                                            className=" group overflow-hidden flex flex-col justify-center gap-3 cursor-pointer"
-                                            key={p.id + p.name}>
-                                            <div className="relative">
-                                                <img
-                                                    src={p.image}
-                                                    alt={p.name}
-                                                    className="aspect-[4/5] w-full rounded-sm bg-[#ececec] object-cover"
-                                                />
-                                                <div className="absolute text-center bottom-0 w-full p-2 opacity-0 rounded-b-sm text-sm group-hover:opacity-100 transition-transform duration-500 cursor-pointer bg-primary text-white">
-                                                    view
-                                                </div>
-                                            </div>
-                                            <div className="flex justify-between md:px-2 mb-5 flex-col gap-1.5 md:flex-row md:gap-0">
-                                                <span className=" text-xs md:text-[16px] text-secondary-foreground group-hover:font-semibold font-medium tracking-wide transition ease-in-out duration-500">{p.name}</span>
-                                                <span className=" text-xs md:text-[16px] text-secondary-foreground group-hover:font-medium tracking-wide transition ease-in-out duration-500 ">{p.price}$</span>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
-                            </div>
+<ul
+  className={clsx(
+    "grid place-items-baseline gap-2.5 px-2.5 list-none",
+    col === "three" ? "grid-cols-3" : "grid-cols-2"
+  )}
+>
+  {sorted.map((p) => (
+    <li key={p.id + p.name}>
+      <Link
+        to={`/products/${p.name}`}
+        className="group overflow-hidden flex flex-col justify-center gap-3 cursor-pointer"
+      >
+        <div className="relative">
+          <img
+            src={p.image}
+            alt={p.name}
+            className="aspect-[4/5] w-full rounded-sm bg-[#ececec] object-cover"
+          />
+
+          <div className="absolute text-center bottom-0 w-full p-2 opacity-0 rounded-b-sm text-sm group-hover:opacity-100 transition-transform duration-500 bg-primary text-white">
+            view
+          </div>
+        </div>
+
+        <div className="flex justify-between md:px-2 mb-5 flex-col gap-1.5 md:flex-row md:gap-0">
+          <span className="text-xs md:text-[16px] text-secondary-foreground group-hover:font-semibold font-medium tracking-wide transition duration-500">
+            {p.name}
+          </span>
+
+          <span className="text-xs md:text-[16px] text-secondary-foreground group-hover:font-medium tracking-wide transition duration-500">
+            {p.price}$
+          </span>
+        </div>
+      </Link>
+    </li>
+  ))}
+</ul>
                         )}
                     </div>
                 </div>
