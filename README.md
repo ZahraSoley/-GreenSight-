@@ -1,4 +1,4 @@
-# 🌿 **Green Sight — a quiet-luxury plant shop with sunlight vibes**
+#**Green Sight — a plant shop**
 
 Minimal, calm, and intentional.
 A clean e-commerce experience for browsing plants, managing a cart, and completing a checkout — all with soft motion and zero clutter.
